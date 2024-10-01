@@ -2,5 +2,14 @@
   "name": "backend",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/backend/src",
-  "tags": []
+  "tags": [],
+  "targets": {
+    "generateApiSpec": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/backend",
+        "command": "./gradlew generateOpenApiDocs"
+      }
+    }
+  }
 }
