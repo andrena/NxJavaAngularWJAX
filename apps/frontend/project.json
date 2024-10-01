@@ -82,6 +82,12 @@
         "styles": ["apps/frontend/src/styles.css"],
         "scripts": []
       }
+    },
+    "generateApiServices": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx openapi-generator-cli generate -i apps/backend/build/openapi.json -g typescript-angular -o apps/frontend/src/app/generated/openapi --additional-properties fileNaming=kebab-case,withInterfaces=true --generate-alias-as-model"
+      }
     }
   }
 }
