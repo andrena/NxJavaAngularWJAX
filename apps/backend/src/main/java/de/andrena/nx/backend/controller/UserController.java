@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/user")
 public class UserController {
 
-    @GetMapping("/current")
+    @GetMapping( path = "/current", produces = "application/json")
     public User getCurrentUser() {
         return new User("01", "admin");
     }
