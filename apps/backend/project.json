@@ -6,6 +6,8 @@
   "targets": {
     "generateApiSpec": {
       "executor": "nx:run-commands",
+      "inputs": ["{projectRoot}/src/main/java/de/andrena/nx/backend/api/**/*"],
+      "outputs": ["{projectRoot}/build/openapi.json"],
       "cache": true,
       "options": {
         "cwd": "apps/backend",
