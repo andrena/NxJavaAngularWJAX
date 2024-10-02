@@ -1,9 +1,32 @@
 image: code.andrena.de:5050/nx-java-typescript/monorepo # Ein Java-21-Node-20-Image
 
+variables:
+  GRADLE_USER_HOME: "$CI_PROJECT_DIR/.gradle"
+  FF_USE_FASTZIP: "true"
+  CACHE_COMPRESSION_LEVEL: "fastest"
+
 stages:
+  - prepare
   - test
   - build
   - deploy
+  -
+default:
+  cache: &global_cache
+    key: $CI_COMMIT_REF_SLUG
+    paths:
+      - node_modules/
+      - .gradle/wrapper/
+      - .gradle/caches/
+
+install_dependencies:
+  stage: prepare
+  script:
+    - npm ci
+    - npx nx run-many --target=installDependencies
+  cache:
+    <<: *global_cache
+    policy: pull-push
 
 before_script:
   - npm ci
@@ -12,6 +35,9 @@ test:
   stage: test
   script:
     - npx nx run-many --target=test
+  cache:
+    <<: *global_cache
+    policy: pull
 
 build:
   stage: build
@@ -21,6 +47,9 @@ build:
     paths:
       - apps/backend/build/libs
       - dist/apps/frontend/browser
+  cache:
+    <<: *global_cache
+    policy: pull
 
 deploy_backend:
   stage: deploy

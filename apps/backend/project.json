@@ -13,6 +13,13 @@
         "cwd": "apps/backend",
         "command": "./gradlew generateOpenApiDocs"
       }
+    },
+    "installDependencies": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/backend",
+        "command": "./gradlew buildEnvironment"
+      }
     }
   }
 }
