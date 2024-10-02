@@ -9,7 +9,7 @@ import { UserControllerService } from './generated/openapi'
     imports: [AsyncPipe],
     template: `
       @if (user$ | async; as user) {
-        <h1>Welcome, {{ user.userName }}</h1>
+        <h1>Hi, {{ user.userName }}</h1>
       }
     `,
 })

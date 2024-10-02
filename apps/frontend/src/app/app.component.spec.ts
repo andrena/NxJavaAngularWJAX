@@ -27,7 +27,7 @@ describe('AppComponent', () => {
         fixture.detectChanges()
         const compiled = fixture.nativeElement as HTMLElement
         expect(compiled.innerText).toContain(
-            'Welcome, Heinz-Jürgen',
+            'Hi, Heinz-Jürgen',
         )
     })
 })
