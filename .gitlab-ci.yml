@@ -50,6 +50,7 @@ build:
 
 deploy_backend:
   stage: deploy
+  cache: []
   dependencies:
     - build
   script:
@@ -57,6 +58,7 @@ deploy_backend:
 
 deploy_frontend:
   stage: deploy
+  cache: []
   dependencies:
     - build
   script:
