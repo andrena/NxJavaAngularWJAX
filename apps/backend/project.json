@@ -6,6 +6,7 @@
   "targets": {
     "generateApiSpec": {
       "executor": "nx:run-commands",
+      "cache": true,
       "options": {
         "cwd": "apps/backend",
         "command": "./gradlew generateOpenApiDocs"
