@@ -50,5 +50,17 @@
         "buildInfoTargetName": "build-info"
       }
     }
-  ]
+  ],
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@pellegrims/nx-remotecache-s3",
+      "options": {
+        "cacheableOperations": ["build", "test", "generateApiServices", "generateApiSpec"],
+        "bucket": "andrena-nx-cache-msieben",
+        "prefix": "wjaxdemo/",
+        "region": "eu-central-1",
+        "readonly": true
+      }
+    }
+  }
 }
