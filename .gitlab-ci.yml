@@ -1,0 +1,37 @@
+image: timbru31/java-node:21-jre-20 # Ein Java-21-Node-20-Image
+
+stages:
+  - test
+  - build
+  - deploy
+
+before_script:
+  - npm ci
+
+test:
+  stage: test
+  script:
+    - npx nx run-many --target=test
+
+build:
+  stage: build
+  script:
+    - npx nx run-many --target=build
+  artifacts:
+    paths:
+      - apps/backend/build/libs
+      - dist/apps/frontend/browser
+
+deploy_backend:
+  stage: deploy
+  dependencies:
+    - build
+  script:
+    - echo "Deploying BE - $(du -sh apps/backend/build/libs | cut -f1)"
+
+deploy_frontend:
+  stage: deploy
+  dependencies:
+    - build
+  script:
+    - echo "Deploying FE - $(du -sh dist/apps/frontend/browser | cut -f1)"
