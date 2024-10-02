@@ -28,9 +28,6 @@ install_dependencies:
     <<: *global_cache
     policy: pull-push
 
-before_script:
-  - npm ci
-
 test:
   stage: test
   script:
