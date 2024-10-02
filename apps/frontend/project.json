@@ -8,6 +8,7 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
+      "dependsOn": ["frontend:generateApiServices", "^build"],
       "options": {
         "outputPath": "dist/apps/frontend",
         "index": "apps/frontend/src/index.html",
@@ -54,6 +55,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
+      "dependsOn": ["frontend:generateApiServices"],
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
@@ -69,6 +71,7 @@
       "executor": "@angular-devkit/build-angular:extract-i18n"
     },
     "test": {
+      "dependsOn": ["frontend:generateApiServices"],
       "executor": "@angular-devkit/build-angular:karma",
       "options": {
         "polyfills": ["zone.js", "zone.js/testing"],
@@ -85,6 +88,7 @@
     },
     "generateApiServices": {
       "executor": "nx:run-commands",
+      "dependsOn": ["backend:generateApiSpec"],
       "options": {
         "command": "npx openapi-generator-cli generate -i apps/backend/build/openapi.json -g typescript-angular -o apps/frontend/src/app/generated/openapi --additional-properties fileNaming=kebab-case,withInterfaces=true --generate-alias-as-model"
       }
