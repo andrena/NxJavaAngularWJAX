@@ -1,4 +1,4 @@
-image: timbru31/java-node:21-jre-20 # Ein Java-21-Node-20-Image
+image: timbru31/java-node:21-jdk-20 # Ein Java-21-Node-20-Image
 
 stages:
   - test
