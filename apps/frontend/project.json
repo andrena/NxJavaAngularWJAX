@@ -82,6 +82,7 @@
             "input": "apps/frontend/public"
           }
         ],
+        "watch": false,
         "styles": ["apps/frontend/src/styles.css"],
         "scripts": []
       }
