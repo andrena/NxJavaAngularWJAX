@@ -1,6 +1,6 @@
-package de.andrena.nx.backend.controller;
+package de.andrena.nx.backend.api.controller;
 
-import de.andrena.nx.backend.model.User;
+import de.andrena.nx.backend.api.model.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
