@@ -1,10 +1,9 @@
-package de.andrena.nx.backend.controller;
+package de.andrena.nx.backend.api.controller;
 
-import de.andrena.nx.backend.model.User;
+import de.andrena.nx.backend.api.model.User;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class UserControllerTest {
 
