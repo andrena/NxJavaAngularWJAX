@@ -1,4 +1,4 @@
-package de.andrena.nx.backend.api;
+package de.andrena.nx.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
