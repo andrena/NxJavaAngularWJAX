@@ -1,27 +1,12 @@
-# Frontend
+# One repo to rule them all
+## Java und Angular unter einem gemeinsamen Dach vereint
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.3.
+W-JAX-Vortrag von Marco Sieben (andrena objects ag)
 
-## Development server
+### Präsentation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Die Präsentation findet sich als Nx.pdf direkt hier im Repo (im `main`-Branch)
 
-## Code scaffolding
+### Die einzelnen Schritte
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Die einzelnen Schritte, die in der Präsentation erwähnt und während des Vortrags gezeigt wurden, sind als einzelne Branches abruf- und anschaubar.
